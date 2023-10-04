@@ -289,9 +289,11 @@ const Home = () => {
 </View> */}
 
       
-        
-
-    
+    <View>
+      <TouchableOpacity onPress={()=> navigation.navigate('Ml')}>
+        <Text>hi</Text>
+      </TouchableOpacity>
+    </View>
 
         
     </ScrollView>

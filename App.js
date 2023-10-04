@@ -17,6 +17,7 @@ import ScanTeeth from './screens/ScanTeeth';
 import CameraPage from './screens/CameraPage';
 import CameraDummy from './screens/CameraDummy';
 import Results from './screens/Results';
+import Ml from './screens/Ml';
 
 
 
@@ -74,7 +75,8 @@ function HomeStack() {
 
 <Tab.Screen name="CameraPage" component={CameraPage} options={{ tabBarVisible: false,tabBarButton: (props) => null,tabBarStyle: { display: "none" ,},screenOptions:{ScreenOrientation: 'landscape'}}} />
 <Tab.Screen name="CameraDummy" component={CameraDummy} options={{ tabBarVisible: false,tabBarButton: (props) => null,tabBarStyle: { display: "none" ,},screenOptions:{ScreenOrientation: 'landscape'}}} />
-<Tab.Screen name="Results" component={Results} options={{ tabBarVisible: true,tabBarButton: (props) => null}}  />     
+<Tab.Screen name="Results" component={Results} options={{ tabBarVisible: true,tabBarButton: (props) => null}}  />    
+<Tab.Screen name="Ml" component={Ml} options={{ tabBarVisible: true,tabBarButton: (props) => null}}  />      
 
 
        
