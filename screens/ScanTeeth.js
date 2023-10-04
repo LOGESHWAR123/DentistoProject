@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { StyleSheet } from 'react-native';
-import { View, Text, Button, Image, ScrollView, TouchableOpacity ,ImageBackground} from 'react-native';
+import { View, Text, Button, Image, ScrollView, TouchableOpacity ,ImageBackground , Dimensions} from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import * as ImagePicker from 'expo-image-picker';
 import { Camera } from 'expo-camera';
@@ -10,6 +10,8 @@ import * as ScreenOrientation from 'expo-screen-orientation';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useRoute } from '@react-navigation/native';
 
+
+const { width } = Dimensions.get('window');
 
 
 const ScanTeeth = () => {
@@ -145,35 +147,20 @@ const ScanTeeth = () => {
 <View style={{height:260,justifyContent:"center",alignItems:"center"}}>
 
 <Text style={{fontSize:22,fontWeight:"bold",textAlign:"center",marginTop:10}}>Scan Now</Text>
-<ScrollView horizontal style={{paddingRight:20}}  pagingEnabled={true} >
-
-<View style={{height:200,backgroundColor:Colors.black,borderRadius:15,width:385,margin:20}}>
-
-<Image 
-   source={require('../assets/scanpage2.png')}
-   style={{width:"100%",height:"100%",borderRadius:15}}
-/>
-
-
-
-
-
-</View> 
-
-<View style={{height:200,backgroundColor:'yellow',borderRadius:15,width:385,margin:20}}>
-
-
-  <Image 
-   source={require('../assets/scanpage1.png')}
-   style={{width:"100%",height:"100%",borderRadius:15}}
-  />
-
-
-
-</View> 
-
-
-</ScrollView>
+<View
+        style={{
+          height: 200,
+          backgroundColor: 'black',
+          borderRadius: 15,
+          width: width - 40, // Adjust the width according to the screen size
+          margin: 20,
+        }}
+      >
+        <Image
+          source={require('../assets/scanpage1.png')}
+          style={{ width: '100%', height: '100%', borderRadius: 15 }}
+        />
+      </View>
 
 </View>
 
@@ -436,10 +423,8 @@ const styles = StyleSheet.create({
     container: {
       flex: 1,
       backgroundColor: 'white',
-      marginTop:45,
+      paddingTop: width < 375 ? 50 : 100, 
       width:"100%", 
-
-    
     },
     
   });

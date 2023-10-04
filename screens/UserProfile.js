@@ -1,7 +1,10 @@
 import React,{useState} from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Image, TextInput, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, Image, TextInput, TouchableOpacity , ScrollView , Dimensions } from 'react-native';
 import RadioForm from 'react-native-simple-radio-button';
+
+
+const { width } = Dimensions.get('window');
 
 export default function UserProfile() {
   const [mail,setmail] = useState('');
@@ -36,7 +39,7 @@ export default function UserProfile() {
   //         </TouchableOpacity>
 
   return (
-    <View style={styles.container}>
+    <ScrollView style={styles.container}>
       <StatusBar style="auto" />
       <View style={styles.navbar}>
         <Image source={{uri:'https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/rm328-366-tong-08_1.jpg?w=800&dpr=1&fit=default&crop=default&q=65&vib=3&con=3&usm=15&bg=F4F4F3&ixlib=js-2.2.1&s=6a37204762fdd64612ec2ca289977b5e'}} style={styles.image} />
@@ -44,7 +47,7 @@ export default function UserProfile() {
 
       
       <View style={{padding:20}}>
-      <View style={{flexDirection:"row",justifyContent:"space-between",marginTop:30}} >
+      <View style={{flexDirection:"row",justifyContent:"space-between",marginTop:60}} >
      <Text style={styles.usertext}>User Information</Text>
       <TouchableOpacity onPress={()=>setedit(!edit)} >
         <View style={{backgroundColor:'#53A1EF',width:50,height:25,borderRadius:10}}>
@@ -252,7 +255,7 @@ export default function UserProfile() {
         </View>
       )}
     </View>
-    </View>
+    </ScrollView>
   );
 }
 
@@ -264,7 +267,7 @@ const styles = StyleSheet.create({
   navbar: {
     backgroundColor: '#53A1EF',
     
-    height: '23%',
+    height: 130,
     justifyContent: 'center', 
     alignItems: 'center', 
   },

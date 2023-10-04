@@ -1,9 +1,11 @@
 import React from 'react';
-import { Modal, View, Image, Button,Text,StyleSheet } from 'react-native';
+import { Modal, View, Image, Button,Text,StyleSheet , Dimensions } from 'react-native';
 import Colors from '../Colors';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import AppointmentCard from '../components/AppointmentCard';
 import { ScrollView } from 'react-native';
+
+const { width } = Dimensions.get('window');
 
 const BookAppointment = () => {
   return (
@@ -43,17 +45,15 @@ const styles=StyleSheet.create({
     backgroundColor:"white"
   }, 
   header:{
-    height:100, 
+    height:120, 
     backgroundColor:Colors.primary, 
     padding:10, 
     flexDirection:"row", 
     justifyContent:"space-between", 
-    paddingTop:40
+    paddingTop: 60
   }, 
   subcontainer:{
-    padding:15
-  
-
+    paddingTop:15,
   }
 
 })
